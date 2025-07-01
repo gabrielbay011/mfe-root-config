@@ -12,6 +12,12 @@ registerApplication({
   activeWhen: ["/buildings"],
 });
 
+registerApplication({
+  name: "@mfe/dashboards",
+  app: () => System.import<LifeCycles>("@mfe/dashboards"),
+  activeWhen: ["/dashboards"],
+});
+
 start({
   urlRerouteOnly: true,
 });
