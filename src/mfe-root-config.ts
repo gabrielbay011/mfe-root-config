@@ -18,6 +18,12 @@ registerApplication({
   activeWhen: ["/dashboards"],
 });
 
+registerApplication({
+  name: "@mfe/navbar",
+  app: () => System.import<LifeCycles>("@mfe/navbar"),
+  activeWhen: (location) => !location.pathname.startsWith("/auth"),
+});
+
 start({
   urlRerouteOnly: true,
 });
